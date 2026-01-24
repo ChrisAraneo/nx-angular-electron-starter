@@ -1,0 +1,21 @@
+{
+  "npmScope": "electron",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "browser-e2e": {
+      "tags": []
+    },
+    "browser": {
+      "tags": []
+    },
+    "electron": {
+      "tags": []
+    }
+  }
+}
