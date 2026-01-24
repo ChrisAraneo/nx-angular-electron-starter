@@ -2,9 +2,9 @@ import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
-let win: BrowserWindow, serve: boolean;
+let win: BrowserWindow;
 const args = process.argv.slice(1);
-serve = args.some((val) => val === '--serve');
+const serve = args.some((val) => val === '--serve');
 
 async function createWindow() {
   const electronScreen = screen;
@@ -37,7 +37,7 @@ async function createWindow() {
         hardResetMethod: 'exit',
       });
     } catch (e) {
-      console.log('electron-reload not available');
+      console.error('electron-reload not available', e);
     }
     win.loadURL('http://localhost:4200');
   } else {
@@ -90,6 +90,5 @@ try {
     }
   });
 } catch (e) {
-  // Catch Error
-  // throw e;
+  console.error('Error during app initialization', e);
 }
