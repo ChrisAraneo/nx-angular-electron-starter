@@ -3,10 +3,10 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'electron-root',
-  standalone: true,
   imports: [RouterModule],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'browser';

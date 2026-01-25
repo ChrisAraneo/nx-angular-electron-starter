@@ -31,6 +31,7 @@
     "test:web": "ng test browser",
     "test:electron": "ng test electron",
     "lint": "nx run-many -t lint",
+    "lint:fix": "nx run-many -t lint -- --fix",
     "e2e": "ng e2e",
     "doc:web": "npx compodoc -p apps/browser/tsconfig.app.json -d documentation/web --theme material -s -o",
     "doc:electron": "npx compodoc -p apps/electron/tsconfig.app.json -d documentation/electron --theme material -s -o",

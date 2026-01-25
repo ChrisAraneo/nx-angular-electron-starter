@@ -1,5 +1,4 @@
 {
-  "productName": "nx-angular-electron-starter",
   "directories": {
     "output": "release/"
   },
@@ -24,13 +23,14 @@
     "!.prettierignore",
     "!.prettierrc"
   ],
-  "win": {
-    "target": ["portable"]
+  "linux": {
+    "target": ["AppImage"]
   },
   "mac": {
     "target": ["dmg"]
   },
-  "linux": {
-    "target": ["AppImage"]
+  "productName": "nx-angular-electron-starter",
+  "win": {
+    "target": ["portable"]
   }
 }

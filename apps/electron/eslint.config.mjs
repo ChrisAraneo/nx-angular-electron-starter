@@ -4,7 +4,7 @@ import {
 } from '@chris.araneo/eslint-config';
 
 const JSONS = ['**/*.json'];
-const SOURCES = ['^(?!.*\\.spec\\.ts$).*\\.ts$'];
+const SOURCES = ['**/*.ts', '!**/*.spec.ts'];
 
 export default [
   ...createJsonConfigs(JSONS),

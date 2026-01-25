@@ -1,10 +1,11 @@
-import { app, BrowserWindow, screen } from 'electron';
-import * as path from 'path';
-import * as url from 'url';
+import * as path from 'node:path';
+import * as url from 'node:url';
 
-let win: BrowserWindow;
+import { app, BrowserWindow, screen } from 'electron';
+
+let win: BrowserWindow | null = null;
 const args = process.argv.slice(1);
-const serve = args.some((val) => val === '--serve');
+const serve = args.includes('--serve');
 
 async function createWindow() {
   const electronScreen = screen;
@@ -36,8 +37,8 @@ async function createWindow() {
         ),
         hardResetMethod: 'exit',
       });
-    } catch (e) {
-      console.error('electron-reload not available', e);
+    } catch (error) {
+      console.error('electron-reload not available', error);
     }
     win.loadURL('http://localhost:4200');
   } else {
@@ -61,22 +62,22 @@ async function createWindow() {
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store window
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
+    // In an array if your app supports multi windows, this is the time
+    // When you should delete the corresponding element.
     win = null;
   });
 }
 
 try {
   // This method will be called when Electron has finished
-  // initialization and is ready to create browser windows.
+  // Initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
   app.on('ready', createWindow);
 
   // Quit when all windows are closed.
   app.on('window-all-closed', () => {
     // On OS X it is common for applications and their menu bar
-    // to stay active until the user quits explicitly with Cmd + Q
+    // To stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== 'darwin') {
       app.quit();
     }
@@ -84,11 +85,11 @@ try {
 
   app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
+    // Dock icon is clicked and there are no other windows open.
     if (win === null) {
       createWindow();
     }
   });
-} catch (e) {
-  console.error('Error during app initialization', e);
+} catch (error) {
+  console.error('Error during app initialization', error);
 }
