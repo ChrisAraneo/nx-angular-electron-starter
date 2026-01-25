@@ -108,7 +108,6 @@
             "eslintConfig": "apps/browser-e2e/eslint.config.mjs",
             "lintFilePatterns": ["apps/browser-e2e/**/*.ts"]
           }
-
         }
       },
       "projectType": "application",
