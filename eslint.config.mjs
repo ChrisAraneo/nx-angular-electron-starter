@@ -4,11 +4,7 @@ import {
   createNxConfigs,
 } from '@chris.araneo/eslint-config';
 
-const JSONS = [
-  '.vscode/*.json',
-  'tools/**/*.json',
-  '*.json',
-];
+const JSONS = ['.vscode/*.json', 'tools/**/*.json', '*.json'];
 
 const SOURCES = ['tools/**/*.js', 'tools/**/*.ts'];
 
