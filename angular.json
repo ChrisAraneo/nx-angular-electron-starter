@@ -71,7 +71,19 @@
             "lintFilePatterns": [
               "apps/browser/**/*.ts",
               "apps/browser/**/*.html"
-            ]
+            ],
+            "eslintConfig": "apps/browser/eslint.config.mjs"
+          }
+        },
+        "lint:fix": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/browser/**/*.ts",
+              "apps/browser/**/*.html"
+            ],
+            "eslintConfig": "apps/browser/eslint.config.mjs",
+            "fix": true
           }
         },
         "test": {
@@ -105,7 +117,16 @@
         "lint": {
           "builder": "@nx/eslint:lint",
           "options": {
-            "lintFilePatterns": ["apps/browser-e2e/**/*.ts"]
+            "lintFilePatterns": ["apps/browser-e2e/**/*.ts"],
+            "eslintConfig": "apps/browser-e2e/eslint.config.mjs"
+          }
+        },
+        "lint:fix": {
+          "builder": "@nx/eslint:lint",
+          "options": {
+            "lintFilePatterns": ["apps/browser-e2e/**/*.ts"],
+            "eslintConfig": "apps/browser-e2e/eslint.config.mjs",
+            "fix": true
           }
         }
       }
@@ -148,7 +169,16 @@
         "lint": {
           "builder": "@nx/eslint:lint",
           "options": {
-            "lintFilePatterns": ["apps/electron/**/*.ts"]
+            "lintFilePatterns": ["apps/electron/**/*.ts"],
+            "eslintConfig": "apps/electron/eslint.config.mjs"
+          }
+        },
+        "lint:fix": {
+          "builder": "@nx/eslint:lint",
+          "options": {
+            "lintFilePatterns": ["apps/electron/**/*.ts"],
+            "eslintConfig": "apps/electron/eslint.config.mjs",
+            "fix": true
           }
         },
         "test": {

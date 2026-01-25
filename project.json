@@ -1,0 +1,39 @@
+{
+  "name": "root",
+  "root": ".",
+  "sourceRoot": ".",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "./*.json",
+          "./*.mjs",
+          "./.vscode/*.json",
+          "./.prettierrc.json",
+          "./tools/**/*.json",
+          "./tools/**/*.js",
+          "./tools/**/*.ts"
+        ],
+        "eslintConfig": "eslint.config.mjs"
+      }
+    },
+    "lint:fix": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "./*.json",
+          "./*.mjs",
+          "./.vscode/*.json",
+          "./.prettierrc.json",
+          "./tools/**/*.json",
+          "./tools/**/*.js",
+          "./tools/**/*.ts"
+        ],
+        "eslintConfig": "eslint.config.mjs",
+        "fix": true
+      }
+    }
+  }
+}

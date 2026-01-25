@@ -79,7 +79,7 @@
     "@angular-eslint/template-parser": "^19.0.1",
     "@angular/cli": "^21.1.1",
     "@angular/language-service": "^21.1.1",
-    "@chris.araneo/eslint-config": "^0.0.77",
+    "@chris.araneo/eslint-config": "0.0.94",
     "@compodoc/compodoc": "^1.2.1",
     "@nx/angular": "^22.0.0",
     "@nx/cypress": "^22.0.0",
